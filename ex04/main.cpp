@@ -13,7 +13,7 @@ int main(int ac, char **av)
         return (EXIT_FAILURE);
 
     inFileName = av[1];
-    outFileName = joinStr(inFileName, ".replace");
+    outFileName = inFileName + ".replace";
 
     inFile = inFileOpen(inFileName);
     if (!inFile)
@@ -22,13 +22,16 @@ int main(int ac, char **av)
     outFile = outFileOpen(outFileName);
     if (!outFile)
     {
-        ioStreamsDel(inFile, outFile);
+        ioFstreamsDel(inFile, outFile);
         return (EXIT_FAILURE);
     }
 
     if (patternReplace(inFile, outFile, av[2], av[3]))
+	{
+	    ioFstreamsDel(inFile, outFile);
         return (EXIT_FAILURE);
+	}
 
-    ioStreamsDel(inFile, outFile);
+    ioFstreamsDel(inFile, outFile);
     return (EXIT_SUCCESS);
 }

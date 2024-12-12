@@ -1,6 +1,6 @@
 NAME	= harlFilter
 FLAGS	= -Werror -Wall -Wextra -std=c++98
-SRCS	= $(shell find . -iname "*.cpp")
+SRCS	= main.cpp Harl.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all		: $(NAME)

@@ -4,8 +4,8 @@
 int main(void)
 {
     std::string greeting;
-    std::string *stringPTR;
     std::string &stringREF = greeting;
+    std::string *stringPTR;
 
     stringPTR = &greeting;
     greeting = "HI THIS IS BRAIN";

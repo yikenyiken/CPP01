@@ -1,7 +1,7 @@
 NAME	= patternReplace
 FLAGS	= -Werror -Wall -Wextra -std=c++98
 HEADERS	= patternReplace.h
-SRCS	= $(shell find . -iname "*.cpp")
+SRCS	= main.cpp patternReplace.cpp utils.cpp
 OBJS	= $(SRCS:.cpp=.o)
 MAIN	= main.cpp
 
@@ -24,9 +24,9 @@ re		: fclean all
 test	: $(NAME)
 	./$< $(MAIN) "(" "{" && sleep 2
 	./$< $(MAIN) " " "_" && sleep 2
-	./$< $(MAIN) "std::" "" && sleep 2
+	./$< $(MAIN) "std::" "" && sleep 4
 	> "$(MAIN).replace"
 	./$< "$(MAIN).replace" "hello" "hi"
-	./$< $(MAIN) "" ""
+	#./$< $(MAIN) "" ""
 
 .PHONY	: clean

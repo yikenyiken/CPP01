@@ -7,8 +7,8 @@ int main(void)
     int     hordeSize;
     Zombie  *myHorde;
 
-    hordeSize = 05;
-    myHorde = zombieHorde(hordeSize, "laila");
+    hordeSize = 5;
+    myHorde = zombieHorde(hordeSize, "zombie1");
     for (int i = 0; i < hordeSize; i++)
         myHorde[i].announce();
 

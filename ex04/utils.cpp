@@ -42,12 +42,7 @@ std::ofstream   *outFileOpen(std::string fileName)
     return (outFile);
 }
 
-std::string joinStr(std::string s1, std::string s2)
-{
-    return (s1 + s2);
-}
-
-void    ioStreamsDel(std::ifstream *inFile, std::ofstream *outFile)
+void    ioFstreamsDel(std::ifstream *inFile, std::ofstream *outFile)
 {
     delete inFile;
     delete outFile;

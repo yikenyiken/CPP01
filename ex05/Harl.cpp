@@ -18,20 +18,20 @@ void    Harl::warning(void)
 
 void    Harl::error(void)
 {
-    std::cout << "The base is under heavy attack! defense actions must be taken" << std::endl;
+    std::cout << "The base is under heavy attack! defensive actions must be taken" << std::endl;
 }
 
 void    Harl::complain(std::string level)
 {
     void                (Harl::*functionPtr)(void) = NULL;
     const std::string   levels[LEVELS] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    void                (Harl::*levelsPtrArray[LEVELS])(void)
+    void                (Harl::*functionPtrsArray[LEVELS])(void)
                             = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
     for (int i = 0; i < LEVELS; i++)
     {
         if (levels[i] == level)
-            functionPtr = levelsPtrArray[i];
+            functionPtr = functionPtrsArray[i];
     }
 
     if (!functionPtr)

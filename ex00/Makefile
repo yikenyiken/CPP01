@@ -1,5 +1,5 @@
 NAME	= zombieGlimpse
-SRCS	= $(shell find . -iname "*.cpp")
+SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 FLAGS	= -Werror -Wall -Wextra -std=c++98
 OBJS	= $(SRCS:.cpp=.o)
 

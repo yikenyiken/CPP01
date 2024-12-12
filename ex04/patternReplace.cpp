@@ -1,14 +1,11 @@
 #include <fstream>
 #include <iostream>
 
-void    ioStreamsDel(std::ifstream *inFile, std::ofstream *outFile);
-
-int istreamEof(std::ifstream *inFile, std::ofstream *outFile)
+int istreamEof(std::ifstream *inFile)
 {
     if (inFile->eof())
         return (1);
 
-    ioStreamsDel(inFile, outFile);
     std::cerr << "incompleted process: input stream failed" << std::endl;
     return (0);
 }
@@ -22,6 +19,7 @@ std::string replaceOcc(std::string line, std::string s1, std::string s2)
     occ = line.find(s1);
     if (s1.empty() || occ == std::string::npos)
         return (line);
+
     postOcc = line.substr(occ + s1.length());
     beforeOcc = line.substr(0, occ);
     beforeOcc += s2;
@@ -44,7 +42,7 @@ int patternReplace(std::ifstream *inFile, std::ofstream *outFile,
         *outFile << line;
     }
 
-    if (!istreamEof(inFile, outFile))
+    if (!istreamEof(inFile))
         return (1);
 
     return (0);

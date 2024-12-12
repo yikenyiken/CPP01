@@ -1,7 +1,7 @@
 NAME	= getViolent
 FLAGS	= -Werror -Wall -Wextra -std=c++98
 HEADERS	= Weapon.h HumanA.h HumanB.h
-SRCS	= $(shell find . -iname "*.cpp")
+SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
 all		: $(NAME)
