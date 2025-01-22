@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include "patternReplace.h"
+#include "patternReplace.hpp"
 
 int main(int ac, char **av)
 {
@@ -9,7 +9,7 @@ int main(int ac, char **av)
     std::string      inFileName;
     std::string      outFileName;
 
-    if (invalidArgsNum(ac))
+    if (isInvalidArgsNum(ac))
         return (EXIT_FAILURE);
 
     inFileName = av[1];

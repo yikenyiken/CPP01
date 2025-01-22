@@ -1,22 +1,17 @@
 #include <string>
 #include <iostream>
 
-int main(void)
+int	main()
 {
-    std::string greeting;
-    std::string &stringREF = greeting;
-    std::string *stringPTR;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string	&stringREF = str;
 
-    stringPTR = &greeting;
-    greeting = "HI THIS IS BRAIN";
+	std::cout << &str << "\n";
+	std::cout << stringPTR << "\n";
+	std::cout << &stringREF << std::endl;
 
-    std::cout << "String memory address: " << &greeting << std::endl;
-    std::cout << "Pointer memory address: " << stringPTR << std::endl;
-    std::cout << "Reference memory address: " << &stringREF << std::endl;
-    std::cout << std::endl;
-    std::cout << "String value: " << greeting << std::endl;
-    std::cout << "Pointer value: " << *stringPTR << std::endl;
-    std::cout << "Reference value: " << stringREF << std::endl;
-
-    return (0);
+	std::cout << str << "\n";
+	std::cout << *stringPTR << "\n";
+	std::cout << stringREF << "\n";
 }

@@ -1,11 +1,12 @@
 NAME	= zombieGlimpse
 SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+HEADERS = Zombie.hpp
 FLAGS	= -Werror -Wall -Wextra -std=c++98
 OBJS	= $(SRCS:.cpp=.o)
 
 all		: $(NAME)
 
-%.o		: %.cpp Zombie.h
+%.o		: %.cpp $(HEADERS)
 	$(CXX) -c $< -o $@ $(FLAGS)
 
 $(NAME)	: $(OBJS)

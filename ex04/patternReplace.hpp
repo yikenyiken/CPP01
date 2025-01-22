@@ -1,9 +1,9 @@
-#ifndef PATTERNREPLACE_H
-# define PATTERNREPLACE_H
+#ifndef PATTERNREPLACE_HPP
+# define PATTERNREPLACE_HPP
 # include <fstream>
 # include <string>
 
-int             invalidArgsNum(int ac);
+int             isInvalidArgsNum(int ac);
 std::ifstream   *inFileOpen(std::string fileName);
 std::ofstream   *outFileOpen(std::string fileName);
 void            ioFstreamsDel(std::ifstream *inFile, std::ofstream *outFile);

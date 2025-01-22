@@ -1,7 +1,5 @@
-#ifndef HARL_H
-# define HARL_H
-# undef LEVELS
-# define LEVELS 4
+#ifndef HARL_HPP
+# define HARL_HPP
 # include <string>
 
 class Harl

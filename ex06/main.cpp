@@ -1,4 +1,4 @@
-#include "Harl.h"
+#include "Harl.hpp"
 #include <iostream>
 
 int main(int argc, char **argv)
@@ -8,7 +8,7 @@ int main(int argc, char **argv)
 
     if (argc != 2)
     {
-        std::cerr << "Wrong argument number" << std::endl;
+        std::cerr << "Wrong argument number\n";
         return (1);
     }
 

@@ -1,6 +1,6 @@
 NAME	= getViolent
 FLAGS	= -Werror -Wall -Wextra -std=c++98
-HEADERS	= Weapon.h HumanA.h HumanB.h
+HEADERS	= Weapon.hpp HumanA.hpp HumanB.hpp
 SRCS	= main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -13,7 +13,7 @@ $(NAME)	: $(OBJS)
 	$(CXX) $^ -o $@ $(FLAGS)
 
 clean	:
-	@rm -rf $(OBJS) 
+	@rm -rf $(OBJS)
 
 fclean	: clean
 	@rm -rf $(NAME)

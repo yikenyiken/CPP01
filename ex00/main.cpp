@@ -1,4 +1,7 @@
-#include "Zombie.h"
+#include "Zombie.hpp"
+#include <iostream>
+#define ZOMBIE1 "zombie1"
+#define ZOMBIE2 "zombie2"
 
 Zombie  *newZombie(std::string name);
 void    randomChump(std::string name);
@@ -7,9 +10,14 @@ int main(void)
 {
     Zombie  *zombie;
 
-    randomChump("zombie1");
+    randomChump(ZOMBIE1);
 
-    zombie = newZombie("zombie2");
+    zombie = newZombie(ZOMBIE2);
+	if (!zombie)
+	{
+		std::cerr << "failed to allocate " << ZOMBIE2 << "\n";
+		return (1);
+	}
     zombie->announce();
 
     delete zombie;

@@ -37,7 +37,7 @@ int patternReplace(std::ifstream *inFile, std::ofstream *outFile,
 
     while (std::getline(*inFile, line))
     {
-        *outFile << std::endl;
+        *outFile << "\n";
         line = replaceOcc(line, s1, s2);
         *outFile << line;
     }

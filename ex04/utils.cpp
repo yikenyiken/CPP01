@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-int invalidArgsNum(int ac)
+int isInvalidArgsNum(int ac)
 {
     if (ac != 4)
     {
@@ -16,8 +16,8 @@ std::ifstream   *inFileOpen(std::string fileName)
 {
     std::ifstream   *inFile;
 
-    inFile = new std::ifstream(fileName.c_str());
-    if (!inFile->is_open())
+    inFile = new (std::nothrow) std::ifstream(fileName.c_str());
+    if (!inFile || !inFile->is_open())
     {
         delete inFile;
         std::cerr << "Failed to open " << fileName << " for reading" << std::endl;
@@ -31,8 +31,8 @@ std::ofstream   *outFileOpen(std::string fileName)
 {
     std::ofstream   *outFile;
 
-    outFile = new std::ofstream(fileName.c_str());
-    if (!outFile->is_open())
+    outFile = new (std::nothrow) std::ofstream(fileName.c_str());
+    if (!outFile || !outFile->is_open())
     {
         delete outFile;
         std::cerr << "Failed to open " << fileName << " for writing" << std::endl;
